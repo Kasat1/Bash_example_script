@@ -14,3 +14,9 @@ git clone https://github.com/Kasat1/Bash_example_script
 ./Script.sh 
 
 > **Note:** You can change *str * ( 16 line ) to whatever you want.
+# Result
+Initial string: 
+Britain is one of the most highly industrialised countries in the world
+
+Received string:
+industrialised countries Britain one world the the of most is in highly
