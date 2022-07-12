@@ -29,13 +29,8 @@ jobs:
           chmod +x ${GITHUB_WORKSPACE}/Script.sh
           ${GITHUB_WORKSPACE}/Script.sh
         shell: bash
-        
-  test_additions_same:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: ./
-      with:
-        old: file1.txt
-        new: file2.txt
-        mode: addition
+      - uses: actions/checkout@v1
+        with:
+          old: ${GITHUB_WORKSPACE}/file1.txt
+          new: ${GITHUB_WORKSPACE}/file2.txt
+          mode: addition
