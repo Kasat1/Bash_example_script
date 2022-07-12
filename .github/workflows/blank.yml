@@ -36,4 +36,4 @@ jobs:
       with:
         old: ${GITHUB_WORKSPACE}/file1.txt
         new: ${GITHUB_WORKSPACE}/file3.txt
-        mode: addition
+        tolerance: same
