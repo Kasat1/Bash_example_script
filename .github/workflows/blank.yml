@@ -36,5 +36,5 @@ jobs:
           #chmod +x "Script.sh",
       # run script
       - name: exec Script  
-        #run: ${GITHUB_WORKSPACE}/Script.sh
+        run: ${GITHUB_WORKSPACE}/Script.sh
         shell: bash
