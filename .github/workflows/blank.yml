@@ -33,7 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo $PWD
-          #chmod +x "Script.sh",
+          chmod +x "${GITHUB_WORKSPACE}/Script.sh",
       # run script
       - name: exec Script  
         run: ${GITHUB_WORKSPACE}/Script.sh
