@@ -16,4 +16,4 @@ function create_array {
 str="Britain is one of the most highly industrialised countries in the world"
 create_array $str
 
-echo "${arr[@]}" | tr ' ' '\n' | sort -rn | tr -d '[0-9]-' | tr '\n' ' '
+echo "${arr[@]}" | tr ' ' '\n' | sort -rn | tr -d '[0-9]-' | tr '\n' ' ' > file2.txt
