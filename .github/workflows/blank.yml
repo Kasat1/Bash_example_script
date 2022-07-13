@@ -30,11 +30,11 @@ jobs:
           ${GITHUB_WORKSPACE}/Script.sh > file2.txt
           envA=$(cat ${GITHUB_WORKSPACE}/file1.txt)
           envB=$(cat ${GITHUB_WORKSPACE}/file2.txt)
-          
+          if [[ $envA -ne $envB ]]
+          then
+            exit 1
+          else
+          echo "All is good"
+          fi
         shell: bash
-      - name: Compare with file1.txt
-        if: ${{ envA }} != ${{ envB }}
-        uses: actions/github-script@v3
-        with:
-          script: |
-                  core.setFailed('envA and envB are not equivalent!')
+
