@@ -28,10 +28,13 @@ jobs:
         run: |
           chmod +x ${GITHUB_WORKSPACE}/Script.sh
           ${GITHUB_WORKSPACE}/Script.sh > file2.txt
+          envA=$(cat ${GITHUB_WORKSPACE}/file1.txt)
+          envB=$(cat ${GITHUB_WORKSPACE}/file2.txt)
+          
         shell: bash
       - name: Compare with file1.txt
-        if: ${{ echo ${GITHUB_WORKSPACE}/file1.txt }} != ${{ echo ${GITHUB_WORKSPACE}/file2.txt }}
+        if: ${{ envA }} != ${{ envB }}
         uses: actions/github-script@v3
         with:
           script: |
-                  core.setFailed('file1 and file2 are not equivalent!')
+                  core.setFailed('envA and envB are not equivalent!')
