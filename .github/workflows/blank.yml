@@ -32,9 +32,9 @@ jobs:
           envB=$(cat ${GITHUB_WORKSPACE}/file2.txt)
           if [[ "$envA" == "$envB" ]]
           then
-            exit 1
+           echo "All is good"
           else
-          echo "All is good"
+           exit 1
           fi
         shell: bash
 
