@@ -29,11 +29,9 @@ jobs:
           chmod +x ${GITHUB_WORKSPACE}/Script.sh
           ${GITHUB_WORKSPACE}/Script.sh > file2.txt
         shell: bash
-  test_additions_same:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-      with:
-        old: ${GITHUB_WORKSPACE}/file1.txt
-        new: ${GITHUB_WORKSPACE}/file2.txt
-        tolerance: same
+      - name: Compare with file1.txt
+        if: ${{ echo ${GITHUB_WORKSPACE}/file1.txt }} != ${{ echo ${GITHUB_WORKSPACE}/file2.txt }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+                  core.setFailed('file1 and file2 are not equivalent!')
